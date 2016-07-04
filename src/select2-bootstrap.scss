@@ -20,7 +20,8 @@ $form-control-transition: border-color ease-in-out .15s, box-shadow ease-in-out 
 // -------------------------
 
 $dropdown-arrow-color: $input-color-placeholder !default;
-$dropdown-box-shadow: 0 6px 12px rgba(0,0,0,.175) !default;
+$dropdown-box-shadow-below: 0 6px 12px rgba(0,0,0,.175) !default;
+$dropdown-box-shadow-above: 0 -6px 12px rgba(0,0,0,.175) !default;
 $clear-selection-color: $dropdown-arrow-color !default;
 
 
@@ -329,11 +330,12 @@ $clear-selection-color: $dropdown-arrow-color !default;
      */
 
     .select2-dropdown {
-        @include box-shadow($dropdown-box-shadow);
+        @include box-shadow($dropdown-box-shadow-below);
         border-color: $input-border-focus;
         overflow-x: hidden;
         margin-top: -1px;
         &--above {
+            @include box-shadow($dropdown-box-shadow-above);
             margin-top: 1px;
         }
     }

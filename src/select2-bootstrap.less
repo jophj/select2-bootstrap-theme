@@ -20,7 +20,8 @@
 // -------------------------
 
 @dropdown-arrow-color: @input-color-placeholder;
-@dropdown-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+@dropdown-box-shadow-below: 0 6px 12px rgba(0,0,0,.175);
+@dropdown-box-shadow-above: 0 -6px 12px rgba(0,0,0,.175);
 @clear-selection-color: @dropdown-arrow-color;
 
 
@@ -329,11 +330,12 @@
      */
 
     .select2-dropdown {
-        .box-shadow(@dropdown-box-shadow);
+        .box-shadow(@dropdown-box-shadow-below);
         border-color: @input-border-focus;
         overflow-x: hidden;
         margin-top: -1px;
         &--above {
+            .box-shadow(@dropdown-box-shadow-above);
             margin-top: 1px;
         }
     }
